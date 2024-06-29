@@ -1,0 +1,134 @@
+/* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  width: 300px;
+  text-align: center;
+}
+
+h1 {
+  margin: 2px;
+  padding: 2em;
+  font-size: 2em;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Form styles */
+#myForm {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+#todo-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 4px 0 0 4px;
+  box-sizing: border-box;
+  background-color: #333;
+  color: #e0e0e0;
+  margin-right: 20px;
+}
+
+#myForm button {
+  padding: 10px;
+  border: none;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  color: #fff;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#myForm button:hover {
+  background: linear-gradient(45deg, #2575fc, #6a11cb);
+}
+
+/* Todos container */
+.todosContainer {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #444;
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+.todo-item input[type='checkbox'] {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.todo-item label {
+  flex: 1;
+}
+
+.todo-item button {
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  padding: 5px 10px;
+  transition: background 0.3s;
+}
+
+.todo-item button:hover {
+  background: linear-gradient(45deg, #ff4b2b, #ff416c);
+}
+
+.textCut {
+  text-decoration: line-through;
+  color: #a9a9a9;
+}
+
+/* Checkbox animation */
+@keyframes checkTodo {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.todo-item input[type='checkbox']:checked + label {
+  animation: checkTodo 0.2s;
+}
